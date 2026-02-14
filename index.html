@@ -1,128 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>For Someone Special 💖</title>
-
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #1e1e2f, #3a1c71);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
-}
-
-/* Big Heart */
-.heart {
-  position: relative;
-  width: 200px;
-  height: 180px;
-  background: #ff2e63;
-  transform: rotate(-45deg);
-  cursor: pointer;
-  animation: pulse 1.5s infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.heart:before,
-.heart:after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 180px;
-  background: #ff2e63;
-  border-radius: 50%;
-}
-
-.heart:before {
-  top: -100px;
-  left: 0;
-}
-
-.heart:after {
-  left: 100px;
-  top: 0;
-}
-
-@keyframes pulse {
-  0% { transform: rotate(-45deg) scale(1); }
-  50% { transform: rotate(-45deg) scale(1.08); }
-  100% { transform: rotate(-45deg) scale(1); }
-}
-
-/* Text on Heart */
-.heart span {
-  transform: rotate(45deg);
-  font-size: 18px;
-  text-align: center;
-  z-index: 2;
-}
-
-/* Letter */
-.letter {
-  position: absolute;
-  background: white;
-  color: #333;
-  width: 320px;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: 0.8s ease;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.letter.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.letter h2 {
-  color: #ff2e63;
-  margin-bottom: 10px;
-}
-
-.hidden {
-  display: none;
-}
-</style>
+  <title>Special Surprise 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="heart" onclick="openLetter()" id="bigHeart">
-  <span>Touch My Heart 💖</span>
+<!-- Floating background -->
+<div class="floating-bg"></div>
+
+<!-- Step 1 -->
+<div id="step1" class="container">
+  <h1>💖 Click on the Heart 💖</h1>
+  <div class="big-heart" onclick="showQuestion()">❤️</div>
 </div>
 
-<div class="letter hidden" id="loveLetter">
-  <h2>My Dearest 💕</h2>
-  <p>
-    <!-- ✨ WRITE YOUR MESSAGE HERE ✨ -->
-    From the moment you came into my life,
-    everything became softer, brighter, and warmer.
-    You are my favorite feeling.
-    Happy Valentine’s Day 💗
-  </p>
+<!-- Step 2 -->
+<div id="questionBox" class="hidden container">
+  <h2>So tell me… 👀</h2>
+  <h1>Are you gay? 😌</h1>
+  <button onclick="showResult()">YES 😏</button>
+  <button onclick="showResult()">NO 😌</button>
 </div>
 
-<script>
-function openLetter() {
-  document.getElementById("bigHeart").style.display = "none";
-  let letter = document.getElementById("loveLetter");
-  letter.classList.remove("hidden");
-  setTimeout(() => {
-    letter.classList.add("show");
-  }, 100);
-}
-</script>
+<!-- Step 3 -->
+<div id="result" class="hidden container">
+  <h2>I KNOW YOU ARE GAY 😜</h2>
+  <div id="emoji" onclick="openEnvelope()">
+    😂 <p>👆 click on me</p>
+  </div>
+</div>
 
+<!-- Step 4 -->
+<div id="envelopeSection" class="hidden container">
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <p>Click the envelope 💌</p>
+</div>
+
+<!-- Step 5 -->
+<div id="letterBox" class="hidden">
+  <div class="letter">
+    <h2>Happy Valentine’s Day 💖</h2>
+    <p>
+Happy Valentine’s Day uncle 💖<br><br>
+
+I just wanted to say thank you… really.  
+Thank you for always being there whenever I get stuck with incidents.  
+No matter how many times I ask, you never say no.  
+You always help me patiently — and honestly, you are one of the main reasons I’m still surviving in this project 😌✨  
+
+You are not just a manager… you are the kind of leader who treats team problems like your own problems.  
+That’s something very rare. And I truly admire that about you.  
+
+Even though your voice sounds a little scary sometimes 😂  
+I know you are actually a very kind and caring person inside.  
+
+Also… you and your Dil Pasand situation 🙄  
+You never share it with anyone! Very bad behaviour sir 😤😂  
+
+And yes… I know I always make you say sorry even when you did nothing wrong.  
+But I enjoy it too much when you say “sorry” 😌  
+So you have no choice — you must continue saying sorry to me forever.  
+
+I like teasing you… a lot 😈  
+Making fun of you is one of my favourite hobbies.  
+And honestly, I don’t think I’ll ever stop doing that.  
+
+Sometimes I get a little jealous also…  
+I want you to be close only to me, not to others — not even Raj 😏  
+Don’t ask why… I just don’t like it 😌  
+
+Even if one day we go to different projects…  
+I will never forget you.  
+You will always be my chweeett bajji 🥹💛  
+
+Thank you for guiding me, supporting me, and tolerating me.  
+You are truly the best manager.  
+
+Luv u my cutiee uncle 💕
+</p>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
